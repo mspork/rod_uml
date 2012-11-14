@@ -1,0 +1,63 @@
+@startuml img/classes01.png
+
+class UI_Profile {
+	name
+
+} 
+
+class Page {
+	name
+}
+
+
+
+
+class Layout {
+	id
+}
+
+class LayoutConfig {
+	name
+}
+
+class Duplo {
+	name
+}
+
+class Model {
+	
+}
+
+class Tab{
+	title
+	selected : boolean
+}
+
+class PageTab {
+
+}
+
+class CollectionTab {
+	
+}
+
+class Collection {
+	name
+}
+
+Tab <|-- PageTab
+Tab <|-- CollectionTab
+
+UI_Profile --> "1" Page : startPage >
+UI_Profile --> "1..*" Page : pages > 
+Page --> "1..*" Layout : layout >
+Layout --> "1" Duplo : duplo >
+Layout --> "1" Model : model >
+Layout --> "1" LayoutConfig : avalonLayout >
+Model --> "*" Tab : tabs >
+Tab --> "1" Page : page >
+CollectionTab --> "1" Collection : collection >
+
+
+
+@enduml
