@@ -10,8 +10,6 @@ class Page {
 }
 
 
-
-
 class Layout {
 	id
 }
